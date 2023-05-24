@@ -1,10 +1,8 @@
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# Load Llama model and tokenizer
-model_name = "facebook/llama-base"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained("ehartford/WizardLM-7B-Uncensored")
+
+model = AutoModelForCausalLM.from_pretrained("ehartford/WizardLM-7B-Uncensored")
 
 # Generate response from user input
 def generate_response(user_input):
